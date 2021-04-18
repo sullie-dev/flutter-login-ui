@@ -46,7 +46,6 @@ class _LoginScreen extends State<LoginScreen> {
                   width: 250,
                 ),
                 SizedBox(
-                  // width: double.infinity,
                   height: 25,
                 ),
               ],
@@ -90,7 +89,12 @@ class _LoginScreen extends State<LoginScreen> {
             ),
             SizedBox(
               height: 25,
-            )
+            ),
+            TextButton(
+                onPressed: () => {
+                      print('Forgot password'),
+                    },
+                child: Text('Forgot password?'))
           ],
         ),
       ),
