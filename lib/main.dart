@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_login_ui/profile.dart';
 
 void main() {
   runApp(MyApp());
@@ -84,7 +85,12 @@ class _LoginScreen extends State<LoginScreen> {
               height: 25,
             ),
             ElevatedButton(
-              onPressed: () => {print('hello')},
+              onPressed: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Profile()),
+                )
+              },
               child: Text('Login'),
             ),
             SizedBox(
