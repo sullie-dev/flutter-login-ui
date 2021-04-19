@@ -1,41 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_login_ui/forgot_password.dart';
-import 'package:flutter_login_ui/profile.dart';
+import 'package:flutter_login_ui/main.dart';
 
-void main() {
-  runApp(MyApp());
-}
+class ForgotPassword extends StatefulWidget {
+  ForgotPassword({Key key}) : super(key: key);
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: LoginScreen(),
-    );
-  }
+  _ForgotPasswordState createState() => _ForgotPasswordState();
 }
 
-class LoginScreen extends StatefulWidget {
-  @override
-  _LoginScreen createState() => _LoginScreen();
-}
-
-class _LoginScreen extends State<LoginScreen> {
+class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             Text(
-              'Login',
+              'Forgot Password',
               style: TextStyle(
                 fontSize: 45.0,
                 color: Color(0xffFCDC4A),
@@ -46,13 +28,10 @@ class _LoginScreen extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'images/login_img.png',
-                  height: 250,
-                  width: 250,
-                ),
-                SizedBox(
-                  height: 25,
-                ),
+                  'images/forgot_password.png',
+                  width: 145,
+                  height: 145,
+                )
               ],
             ),
             Row(
@@ -73,9 +52,10 @@ class _LoginScreen extends State<LoginScreen> {
                           height: 25.0,
                         ),
                         TextField(
+                          obscureText: true,
                           decoration: InputDecoration(
                             border: UnderlineInputBorder(),
-                            labelText: 'Password',
+                            labelText: 'New Password',
                           ),
                         ),
                       ],
@@ -88,28 +68,19 @@ class _LoginScreen extends State<LoginScreen> {
               // width: double.infinity,
               height: 25,
             ),
-            ElevatedButton(
-              onPressed: () => {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Profile()),
-                )
-              },
-              child: Text('Login'),
-            ),
             SizedBox(
-              height: 25,
+              height: 25.0,
             ),
-            TextButton(
+            ElevatedButton(
                 onPressed: () => {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ForgotPassword(),
+                          builder: (context) => LoginScreen(),
                         ),
-                      ),
+                      )
                     },
-                child: Text('Forgot password?'))
+                child: Text('Reset Password'))
           ],
         ),
       ),
